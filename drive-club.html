@@ -34,7 +34,7 @@
 .ns-auto-a .facts div{padding:26px 0 30px;color:var(--mute);font-size:15px}
 .ns-auto-a .facts b{display:block;font-family:'Unbounded',sans-serif;font-size:32px;line-height:1.1;font-weight:600;margin-bottom:8px;background:var(--met);-webkit-background-clip:text;background-clip:text;color:transparent}
 /* вариант «Схема машины»: фото авто, точки на деталях → цена и время */
-.ns-auto-a .sch{position:relative;z-index:2;margin:auto 0;padding-bottom:30px}
+.ns-auto-a .sch{position:relative;z-index:2;margin:auto;padding-bottom:30px}
 .ns-auto-a .sch-top{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}
 .ns-auto-a .sch h1{font-size:70px}
 .ns-auto-a .sch p.l{max-width:30em;font-size:18px;color:#D3D6DB;margin-top:18px}
@@ -77,13 +77,13 @@
 .ns-auto-a h2.m{font-size:54px}
 .ns-auto-a .lead{font-size:18px;color:#BFC3C9;max-width:30em;margin-top:24px}
 .ns-auto-a .sec{padding:60px 0}
-.ns-auto-a .split{margin:60px 0}
+.ns-auto-a .split{margin:60px auto;max-width:1920px}
 .ns-auto-a .split+.split{margin-top:0}
 .ns-auto-a>section,.ns-auto-a>footer{position:relative;z-index:1}
 /* фото и текст по очереди, фото уходит в край экрана */
 .ns-auto-a .split{display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:560px}
-.ns-auto-a .split .tx{padding:60px 72px 60px max(56px,calc((100vw - 1280px)/2 + 56px))}
-.ns-auto-a .split.r .tx{order:2;padding:60px max(56px,calc((100vw - 1280px)/2 + 56px)) 60px 88px}
+.ns-auto-a .split .tx{padding:60px 72px 60px max(56px,calc((min(100vw,1920px) - 1280px)/2 + 56px))}
+.ns-auto-a .split.r .tx{order:2;padding:60px max(56px,calc((min(100vw,1920px) - 1280px)/2 + 56px)) 60px 88px}
 .ns-auto-a .split .ph{align-self:stretch;min-height:520px;background-size:cover;background-position:center}
 .ns-auto-a .nums{display:flex;gap:56px;margin-top:44px}
 .ns-auto-a .nums b{display:block;white-space:nowrap;font-family:'Unbounded',sans-serif;font-weight:600;font-size:30px;line-height:1}
@@ -101,11 +101,11 @@
 .ns-auto-a .arch{display:grid;grid-template-columns:1fr 420px;gap:90px;align-items:center}
 .ns-auto-a .arch .ph{height:520px;border-radius:220px 220px 18px 18px;background-size:cover;background-position:center 75%;box-shadow:0 40px 90px rgba(0,0,0,.6)}
 /* колесо за краем + огромная бледная цифра */
-.ns-auto-a .wheel{position:relative;min-height:760px;margin:60px 0;display:flex;align-items:center;overflow:hidden}
+.ns-auto-a .wheel{position:relative;min-height:760px;margin:60px auto;max-width:1920px;display:flex;align-items:center;overflow:hidden}
 .ns-auto-a .wheel .wh{position:absolute;left:calc(min(46vw,660px)/-2.6);top:50%;width:min(46vw,660px);aspect-ratio:1;margin-top:calc(min(46vw,660px)/-2);background-size:contain;filter:drop-shadow(0 30px 60px rgba(0,0,0,.8));will-change:transform}
 .ns-auto-a .wheel .big{position:absolute;left:31%;bottom:-6px;font-family:'Unbounded',sans-serif;font-weight:700;font-size:250px;line-height:1;letter-spacing:-.04em;color:rgba(236,237,239,.045);white-space:nowrap;pointer-events:none}
 .ns-auto-a .wheel .big small{font-size:110px;vertical-align:top;margin-left:12px}
-.ns-auto-a .wheel .tx{position:relative;margin:0 0 150px auto;width:min(640px,52%);padding-right:max(56px,calc((100vw - 1280px)/2 + 56px))}
+.ns-auto-a .wheel .tx{position:relative;margin:0 max(56px,calc((min(100vw,1920px) - 1280px)/2 + 56px)) 150px auto;width:min(584px,45%)}
 /* тормоз с подписями */
 .ns-auto-a .brake{position:relative;margin-top:56px}
 .ns-auto-a .brake img{display:block;width:100%;height:auto;border-radius:14px}
@@ -211,6 +211,11 @@
   .ns-auto-a .bkg{grid-template-columns:1fr;gap:40px}
   .ns-auto-a form{padding:26px 20px}
   .ns-auto-a footer .w{flex-direction:column}
+}
+@media (min-width:1921px){
+  .ns-auto-a .split .ph{-webkit-mask-image:linear-gradient(90deg,#000 70%,transparent);mask-image:linear-gradient(90deg,#000 70%,transparent)}
+  .ns-auto-a .split.r .ph{-webkit-mask-image:linear-gradient(270deg,#000 70%,transparent);mask-image:linear-gradient(270deg,#000 70%,transparent)}
+  .ns-auto-a .wheel{-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%);mask-image:linear-gradient(90deg,transparent,#000 12%)}
 }
 @media (prefers-reduced-motion:reduce){.ns-auto-a .btn,.ns-auto-a .st{transition:none}}
 </style>
